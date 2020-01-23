@@ -1,86 +1,512 @@
 @import "reset.css";
+@import "fonts.css";
 
-
-  {
- -webkit-font-smoothing: antialiased;
- -moz-osx-font-smoothing: grayscale;
- }
-
- * {
- -webkit-font-smoothing: antialiased;
- -moz-osx-font-smoothing: grayscale;
- }
-
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 body {
-  font-family: 'AkzidenzGroteskPro', sans-serif;
+    font-family: 'Helvetica',sans-serif;
+    width: 100%;
 }
-.aboutus {
-  margin-left: 5vw;
-  overflow-x: hidden;
-}
+h1,
 h2 {
-  margin-top: 20vw;
-  font-weight: bold;
-  font-size: 72px;
-  margin-bottom: 11vw;
+    font-size: 17vw;
+    font-weight: 700;
 }
 
-p {
-  font-weight: 200;
-  font-size: 14px;
-  margin-bottom: 7vw;
+
+/*ПРИВЕТСТВЕННАЯ СТРАНИЦА*/
+
+.hero {
+    position: relative;
 }
-hr {
-  margin-left: 55vw;
-  margin-top: 5vw;
-  height: 3px;
-  background-color: black;
+.hero__header__menu {
+    width: 27px;
+    height: 3px;
+    background-color: black;
+    position: fixed;
+    right: 4vw;
+    top: 6vw;
 }
-h3 {
-  margin-top: 12vw;
-  font-weight: bold;
-  font-size: 36px;
+.hero__header__menu::before,
+.hero__header__menu::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 27px;
+    height: 3px;
+    background-color: black;
+}
+.hero__header__menu::before{
+    content: '';
+    top: -8px;
+}
+.hero__header__menu::after {
+    content: '';
+    top: 8px;
+}
+.hero__header__menu:hover {
+ transform: rotate(45deg);
+}
+.hero__header__menu::before:hover {
+ transform: rotate(-45deg);
+ top: 0px;
+}
+.hero__header__menu::after:hover {
+    top: 0px;
+    transform: rotate(-85deg);
+}
+.hero__header__block {
+    display: none;
+}
+.hero__date {
+    transform: rotate(-90deg);
+    font-size: 5.5vw;
+}
+.hero__square {
+    width: 45%;
+    height: 11%;
+    background-color: #E5011C;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.hero__title {
+    margin-top: 55%;
+}
+.hero__title__text:first-of-type {
+    margin-left: -2%;
+    animation: moveInRight 0.6s ease-in-out;
+}
+.hero__title__text:last-of-type {
+    margin-left: 41%;
+    animation: moveInLeft 0.6s ease-in-out;
+}
+.hero__down__circle {
+    width: 60%;
+    height: 230px;
+    border-radius: 50%;
+    background-color: #E5011C;
+}
+.hero__down__link {
+    text-decoration: none;
+    color: black;
+    font-size: 5.5vw;
+}
+.hero__down__link:hover {
+    text-decoration: underline;
+}
+.hero__down {
+    display: flex;
+    margin-top: 40%;
+    margin-left: -20%;
+}
+.hero__down__arrow {
+  display: none;
+}
+@keyframes moveInRight {
+  0% {
+    transform: translate3d(-850px, 0, 0);
+  }
+  100% {
+    transform: translate3d(10px, 0, 0);
+  }
+}
+@keyframes moveInLeft {
+  0% {
+    transform: translate3d(850px, 0, 0);
+  }
+  100% {
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+/*we*/
+
+.aboutus {
+    margin-left: 5vw;
+    overflow-x: hidden;
+}
+.aboutus__info__title {
+    font-weight: bold;
+    margin-bottom: 11vw;
+    margin-top: 20vw;
+}
+.aboutus__info__p {
+    font-size: 4vw;
+    margin-bottom: 7vw;
+}
+.aboutus__info__line {
+    margin-left: 55vw;
+    margin-top: 5vw;
+    height: 1vw;
+    background-color: black;
+}
+.aboutus__authors__title {
+    margin-top: 12vw;
+    font-weight: bold;
+    font-size: 36px;
 }
 .aboutus__authors__we {
-  display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    padding-top: 18vw;
+    padding-bottom: 18vw;
 }
-img {
-  width: 221px;
-  margin-left: 11vw;
-  margin-top: 21vw;
-}
-.aboutus__authors__we__block {
+.aboutus__authors__we li {
+  margin-right: 58px;
   position: relative;
 }
-.aboutus__authors__we__block__shape {
-  position: absolute;
-  background-color: #E5011C;
+.aboutus__authors__we li img {
+    width: 221px;
+    height: 221px;
+
 }
- .aboutus__authors__we__block_:nth-child(1) .aboutus__authors__we__block__shape {
-  width: 87px;
-  height: 87px;
-  margin-top: 10vw;
-  margin-left: 40vw;
+.aboutus__authors__we li h4 {
+    font-size: 24px;
+    line-height:  96%;
+    color: #FFFFFF;
+    font-weight: bold;
+    position: absolute;
+    bottom: -1%;
+    left: -1%;
 }
-  .aboutus__authors__we__block:nth-child(2) .aboutus__authors__we__block__shape {
-  width: 87px;
-  height: 87px;
-  border-radius: 50%;
+.aboutus__authors__we__first h4,
+.aboutus__authors__we__third h4,
+.aboutus__authors__we__fifth h4 {
+    bottom: -1%;
+    left: -1%;
 }
-.aboutus__authors__we__block__name {
-  position: absolute;
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
+.aboutus__authors__we__second h4,
+.aboutus__authors__we__fourth h4 {
+    top: -1%;
+    left: -1%;
 }
-.aboutus__authors__we__block:nth-of-type(even) .aboutus__authors__we__block__name {
-  margin-top: -71vw;
-  margin-left: 10vw;
+.aboutus__authors__we li div {
+    background-color: #E5011C;
+    position: absolute;
+}
+.aboutus__authors__we__first__square,
+.aboutus__authors__we__third__tr,
+.aboutus__authors__we__fifth__cur {
+    width: 45%;
+    height: 45%;
+    right: -11vw;
+    top: -12vw;
+}
+.aboutus__authors__we__second__curcle {
+    width: 45%;
+    height: 45%;
+}
+.aboutus__authors__we__second__curcle,
+.aboutus__authors__we__fourth__par {
+    right: -11vw;
+    bottom: -9vw;
 }
 
-.aboutus__authors__we__block:nth-of-type(odd) .aboutus__authors__we__block__name {
-  margin-top: -14vw;
-  margin-left: 10vw;
+
+.aboutus__authors__we__text__first,
+.aboutus__authors__we__text__second,
+.aboutus__authors__we__text__third,
+.aboutus__authors__we__text__fourth,
+.aboutus__authors__we__text__fifth {
+    width: 221px;
+    height: 221px;
+    opacity: 0;
+    top: 0;
+}
+.aboutus__authors__we__text__first:hover,
+.aboutus__authors__we__text__second:hover,
+.aboutus__authors__we__text__third:hover,
+.aboutus__authors__we__text__fourth:hover,
+.aboutus__authors__we__text__fifth:hover {
+    opacity: 1;
+    background: rgba(20, 20, 20, 0.7);
+    color: white;
+    font-size: 4vw;
+    transition: .3s;
+}
+.aboutus__authors__we__text__first__parag,
+.aboutus__authors__we__text__third__parag,
+.aboutus__authors__we__text__fifth__parag,
+.aboutus__authors__we__text__second__parag,
+.aboutus__authors__we__text__fourth__parag {
+    width: 70%;
+}
+.aboutus__authors__we__text__second__parag,
+.aboutus__authors__we__text__fourth__parag {
+    position: absolute;
+    bottom: 0;
+}
+.aboutus__authors__we li h4 {
+    font-size: 24px;
+    line-height:  96%;
+    color: #FFFFFF;
+    font-weight: bold;
+    position: absolute;
+    bottom: -1%;
+    left: -1%;
+}
+.aboutus__authors__we__first h4,
+.aboutus__authors__we__third h4,
+.aboutus__authors__we__fifth h4 {
+    bottom: -1%;
+    left: -1%;
+}
+.aboutus__authors__we__second h4,
+.aboutus__authors__we__fourth h4 {
+    top: -1%;
+    left: -1%;
+}
+.aboutus__authors__we__first__square,
+.aboutus__authors__we__third__tr,
+.aboutus__authors__we__fifth__cur {
+    z-index: 1;
+    width: 45%;
+    height: 45%;
+    right: -11vw;
+    top: -12vw;
+}
+.aboutus__authors__we__first__square {
+    background-color: #E5011C;
+}
+.aboutus__authors__we__second__curcle {
+    width: 45%;
+    height: 45%;
+}
+.aboutus__authors__we__second__curcle,
+.aboutus__authors__we__fourth__par {
+    z-index: 1;
+    right: -11vw;
+    bottom: -9vw;
+    background-color: #E5011C;
+}
+.aboutus__authors__we__second__curcle {
+    border-radius: 50%;
+}.aboutus__authors__we__third__tr {
+    width: 0;
+    height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 100px solid #E5011C;
+}
+.aboutus__authors__we__fourth__par {
+    width: 55%;
+    height: 45%;
+    background-color: #E5011C;
+}
+.aboutus__authors__we__fifth__cur {
+    width: 55%;
+    height: 45%;
+    border-radius: 50%;
+    background-color: #E5011C;
+}
+
+
+/*ПОДВАЛ*/
+
+.footer__list {
+    margin-left: 3vw;
+    margin-right: 7vw;
+    margin-top: 30vw;
+    padding-bottom: 10vw;
+    display: flex;
+    justify-content: space-between;
+}
+.footer__list__item {
+    margin-right: 2vw;
+}
+.footer__list__item__link {
+    color: black;
+    text-decoration: none;
+    font-size: 4.5vw;
+}
+.footer__list__item__link:hover {
+    text-decoration: underline;
+}
+.footer__doptext h4 {
+  display: none;
+}
+
+@media (min-width: 1440px) {
+
+  /*ПРИВЕТСТВЕННАЯ СТРАНИЦА*/
+  .hero__date {
+    display: none;
+  }
+  .hero__header__menu {
+    display: none;
+  }
+  .hero__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    top: 1.7vw;
+    left: 4vw;
+    width: 96vw;
+  }
+  .hero__header div {
+    margin-top: 1vw;
+  }
+  .hero__header__block {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .hero__header__block__link {
+      margin-left: 4vw;
+    }
+    .hero__header__block__link,
+    .hero__header__block__items__link  {
+      text-decoration: none;
+      font-size: 1.3vw;
+      color: black;
+      display: block;
+    }
+    .hero__header__block__items {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 24vw;
+    }
+    .hero__header__block__items__link:hover {
+      text-decoration: underline;
+    }
+    .hero__header__block__link {
+        font-weight: 700;
+    }
+    .hero__header::before {
+      display: none;
+    }
+    .hero__header::after {
+      display: none;
+    }
+    .hero__square {
+      width: 29vw;
+      height: 12vw;
+      top: 5vw;
+    }
+    .hero__title {
+        margin-top: 15%;
+    }
+    .hero__down__circle {
+        width: 25vw;
+        height: 25vw;
+    }
+    .hero__down {
+        display: flex;
+        margin-top: 1vw;
+        margin-left: -5vw;
+    }
+    .hero__down__link {
+      font-size: 1vw;
+      margin-top: 9vw;
+      margin-left: 28vw;
+    }
+    .hero__down__arrow {
+      display:block;
+      margin-top: -2vw;
+      margin-left: -3.8vw;
+    }
+
+    /* О НАС*/
+    .aboutus {
+      margin-left: 4vw;
+    }
+    .aboutus__info__title {
+      margin-bottom: 5vw;
+      font-size: 19vw;
+    }
+    .aboutus__info__p {
+      font-size: 1.5vw;
+      width: 515px;
+      line-height: 2.4vw;
+      margin-bottom: 2vw;
+    }
+    .aboutus__info__line {
+      margin-top: 15vw;
+      width: 70vw;
+      height: 0.7vw;
+      margin-left: 40vw;
+    }
+    .aboutus__authors__title {
+      font-size: 7vw;
+    }
+    .aboutus__authors__we li img {
+      width: 32vw;
+      height: 32vw;
+    }
+    .aboutus__authors__we li h4 {
+        font-size: 3vw;
+    }
+    .aboutus__authors__we__first__square,
+    .aboutus__authors__we__third__tr,
+    .aboutus__authors__we__fifth__cur {
+        width: 45%;
+        height: 45%;
+        right: -5vw;
+        top: -5vw;
+    }
+    .aboutus__authors__we__second__curcle,
+    .aboutus__authors__we__fourth__par {
+        right: -5vw;
+        bottom: -5vw;
+    }
+    .aboutus__authors__we li {
+      margin-right: 9.5vw;
+    }
+    .aboutus__authors__we__text__first,
+    .aboutus__authors__we__text__second,
+    .aboutus__authors__we__text__third,
+    .aboutus__authors__we__text__fourth,
+    .aboutus__authors__we__text__fifth {
+        width: 32vw;
+        height: 32vw;
+    }
+    .aboutus__authors__we__text__first:hover,
+    .aboutus__authors__we__text__second:hover,
+    .aboutus__authors__we__text__third:hover,
+    .aboutus__authors__we__text__fourth:hover,
+    .aboutus__authors__we__text__fifth:hover {
+      font-size: 2vw;
+      line-height: 2.4vw;
+    }
+    .aboutus__authors__we__text__first__parag,
+    .aboutus__authors__we__text__third__parag,
+    .aboutus__authors__we__text__fifth__parag,
+    .aboutus__authors__we__text__second__parag,
+    .aboutus__authors__we__text__fourth__parag {
+        width: 43%;
+    }
+
+    /*ПОДВАЛ*/
+    .footer__title {
+      margin-top: 4vw;
+    }
+    .footer__list__item__link {
+        font-size: 1.5vw;
+    }
+    .footer__list {
+      width: 36vw;
+      margin-top: 2vw;
+      margin-left: 1vw;
+    }
+    .footer__list__item__link:hover {
+      text-decoration: underline;
+    }
+    .footer__doptext h4 {
+        display: block;
+        font-size: 1.5vw;
+        width: 170px;
+        margin-top: -20.4vw;
+        margin-left: 78vw;
+        line-height: 1.8vw;
+      }
+        .footer__doptext h4:hover {
+          text-decoration: underline;
+        }
+
 }
